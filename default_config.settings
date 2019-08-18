@@ -1,0 +1,35 @@
+#TGS Application Settings
+#Sun Aug 18 23:15:32 CEST 2019
+inInitialCellCount=1000
+cbPrepareClones=true
+inPassengerGenesTpg=5000
+inMaxCycles=200
+ggScaleToMaxSize=true
+teQuota=50
+inDmSize=200
+ggMaxSize=2400
+inMaxCells=1500
+inDriverFitAdvantageTda=0.10
+cbPrepareCells=true
+inDriverGenesTdg=7
+mamPath=
+teCloneMinLifespan=3
+cbTeGenerateFishplot=false
+inMutationRate=0.0000001
+cbGenerateSurvivorsAnalytics=true
+inPmSize=1000
+teCellListerCutOff=20
+ggRectangeScale=true
+cbClonesScatter=true
+inPassengerFitAdvantageTpa=0.001
+cbGenerateAnalyticsPNG=true
+teParallelSimTasksCount=1
+teResUseGroupping=true
+inIterations=5
+cbTeGenerateGraph=true
+teCloneMinSize=10
+cbPassengersScatter=true
+cbDriversSactter=true
+teWorkDir=E\:\\
+cbGenerateSimulationPNG=true
+teParallelProcTasksCount=10

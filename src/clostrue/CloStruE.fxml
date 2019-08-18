@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eu.hansolo.medusa.Gauge?>
+<?import javafx.embed.swing.SwingNode?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane id="AnchorPane" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clostrue.GuiController">
+    <children>
+      <BorderPane prefHeight="786.0" prefWidth="1152.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <GridPane prefHeight="70.0" prefWidth="1108.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="802.0" minWidth="10.0" prefWidth="677.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="113.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane hgap="10.0" GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="buttonStart" onAction="#handleButtonStart" prefHeight="31.0" prefWidth="83.0" text="Start" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </GridPane>
+                  <GridPane hgap="10.0" prefHeight="39.0" prefWidth="514.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="10.0" prefWidth="87.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="682.0" minWidth="10.0" prefWidth="560.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ProgressBar fx:id="progressBar" prefHeight="23.0" prefWidth="820.0" progress="0.0" GridPane.columnIndex="1" />
+                        <Label text="Simulation" GridPane.halignment="RIGHT" />
+                        <Label text="Graph" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <ProgressBar fx:id="progressGraph" prefHeight="23.0" prefWidth="820.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </bottom>
+         <center>
+            <TabPane prefHeight="689.0" prefWidth="1152.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                  <Tab text="Settings">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane prefHeight="746.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <tabs>
+                                  <Tab text="Simulation">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="572.0" prefWidth="1200.0">
+                                             <children>
+                                                <GridPane hgap="10.0" layoutX="7.0" layoutY="7.0" prefHeight="411.0" prefWidth="807.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.0" AnchorPane.topAnchor="0.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="914.0" minWidth="10.0" prefWidth="298.0" />
+                                                    <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="632.0" minWidth="0.0" prefWidth="499.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <GridPane hgap="10.0" vgap="10.0" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <TitledPane animated="false" text="Population Initial Setup">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="293.0">
+                                                                     <children>
+                                                                        <GridPane hgap="10.0" layoutX="-5.0" maxWidth="300.0" minHeight="83.0" minWidth="300.0" prefWidth="300.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="121.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="113.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Cell Count (K)">
+                                                                                 <GridPane.margin>
+                                                                                    <Insets />
+                                                                                 </GridPane.margin>
+                                                                              </Label>
+                                                                              <TextField fx:id="inInitialCellCount" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" text="1000" GridPane.columnIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Initial Population Size. &#10;Range 10 - 1000" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Mutation rate (u)" GridPane.rowIndex="1" />
+                                                                              <TextField fx:id="inMutationRate" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="99.0" text="0.00000001" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Cell Mutation Rate. &#10;Typical 0.00000001" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <padding>
+                                                                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                                           </padding>
+                                                                           <opaqueInsets>
+                                                                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                                           </opaqueInsets>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </TitledPane>
+                                                            <TitledPane animated="false" text="Stop Conditions" GridPane.rowIndex="1">
+                                                               <content>
+                                                                  <AnchorPane minHeight="70.0" minWidth="0.0" prefHeight="81.0" prefWidth="296.0">
+                                                                     <children>
+                                                                        <GridPane hgap="10.0" prefHeight="86.0" prefWidth="294.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="150.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="127.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <padding>
+                                                                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                                                           </padding>
+                                                                           <children>
+                                                                              <TextField fx:id="inMaxCycles" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" text="5000" GridPane.columnIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Maximum Count of simulation cycles.&#10;Maximum allowed value: 50000&#10;Increasing cycles will cause longer runtimes&#10;and increased memory consumption" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <TextField fx:id="inMaxCells" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" text="20000" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Maximum cell count in the model. &#10;After reaching this stop-confition,&#10;the simulation will be ended immediatelly. &#10;This is a protective setting" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Max cycles (#C)" />
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Max cell count (#Kx)" GridPane.rowIndex="1" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                            </TitledPane>
+                                                            <TitledPane animated="false" text="Computational" GridPane.rowIndex="2">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <GridPane hgap="3.0" layoutX="44.0" layoutY="24.0" vgap="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.33331298828125" minWidth="10.0" prefWidth="152.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.33331298828125" minWidth="10.0" prefWidth="116.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="147.0" text="Iterations" />
+                                                                              <TextField fx:id="inIterations" onKeyReleased="#handleOnKeyInInputField" text="1" GridPane.columnIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="The number of simulation executions" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="177.0" text="Simulation Tasks" GridPane.rowIndex="1" />
+                                                                              <TextField fx:id="teParallelSimTasksCount" onKeyReleased="#handleOKRteParallelTasksCount" prefHeight="32.0" prefWidth="99.0" text="25" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Parallell simulation tasks. Increasing of this parameter &#10;will allow the simulation to run faster. Setting the value&#10;too big will cause loose of performance.&#10;Range: 1 - 1000. Suggested value should be calculated&#10;as 5x the ammount of HT cores of the CPU" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="177.0" text="Processing Tasks" GridPane.rowIndex="2" />
+                                                                              <TextField fx:id="teParallelProcTasksCount" onKeyReleased="#handleOKRteParallelTasksCount" prefHeight="32.0" prefWidth="99.0" text="25" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Parallell processing tasks. Increasing of this parameter &#10;will allow the postprocessing to run faster. Setting the value&#10;too big will cause loose of performance.&#10;Range: 1 - 1000. Suggested value should be calculated&#10;as 2x the ammount of HT cores of the CPU" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </TitledPane>
+                                                         </children>
+                                                      </GridPane>
+                                                      <TitledPane animated="false" prefHeight="392.0" prefWidth="364.0" text="Mutation Advantage Model (MAM) Setup" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                                                        <content>
+                                                          <AnchorPane minHeight="75.0" minWidth="0.0" prefHeight="360.0" prefWidth="401.0">
+                                                               <children>
+                                                                  <TabPane layoutX="1.0" layoutY="1.0" prefHeight="335.0" prefWidth="360.0" tabClosingPolicy="UNAVAILABLE">
+                                                                    <tabs>
+                                                                      <Tab text="Simple">
+                                                                        <content>
+                                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="364.0">
+                                                                                 <children>
+                                                                                    <GridPane hgap="3.0" layoutX="2.0" layoutY="2.0" prefHeight="301.0" prefWidth="356.0" vgap="3.0">
+                                                                                      <columnConstraints>
+                                                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="260.0" />
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="113.0" />
+                                                                                      </columnConstraints>
+                                                                                      <rowConstraints>
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                      </rowConstraints>
+                                                                                       <children>
+                                                                                          <TextField fx:id="inDriverFitAdvantageTda" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffb6c1; -fx-border-color: #808080;" text="0.15" GridPane.columnIndex="1">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="This is the fittness advantage gained by the cell&#10;which receives mutation on Driver Gene.&#10;Range: 0.01 - 0.99 (Typical 0.15)" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <TextField fx:id="inDriverGenesTdg" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffb6c1; -fx-border-color: #808080;" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="This is the number of Driver genes in the genome.&#10;Increasing the number of genes will boost&#10;the likelyhood for selecting Driver genes when mutation occurs&#10;Range: 1-100 (Typical: 70)" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <TextField fx:id="inDmSize" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffb6c1; -fx-border-color: #808080;" text="1000" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="Driver Gene TargetSize.&#10;This is the gene size in pairs&#10;Min 10 Max 100.000, Typ: 1000" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <TextField fx:id="inPassengerFitAdvantageTpa" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #90ee90; -fx-border-color: #808080;" text="0.001" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="This is the fittness disadvantage gained by the cell&#10;which receives mutation on Passenger Gene.&#10;Range: 0.0001 - 0.99 (Typical 0.001)" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <TextField fx:id="inPassengerGenesTpg" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #90ee90; -fx-border-color: #808080;" text="5000" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="This is the number of Passenger genes in the genome.&#10;Increasing the number of genes will boost&#10;the likelyhood for selecting Passenger genes when mutation occurs&#10;Range: 1-10.000 (Typical: 5.000)" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <TextField fx:id="inPmSize" alignment="CENTER_RIGHT" onKeyReleased="#handleOnKeyInInputField" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #90ee90; -fx-border-color: #808080;" text="1000" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                                             <tooltip>
+                                                                                                <Tooltip text="Passenger Gene TargetSize.&#10;This is the gene size in pairs&#10;Min 10 Max 100.000, Typ: 1000" />
+                                                                                             </tooltip>
+                                                                                          </TextField>
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="205.0" text="Drivers Fit. Advantage (Sd)" />
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="174.0" text="Driver Genes (Td/G)" GridPane.rowIndex="1" />
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="215.0" text="Driver Gene Target Size (Td)" textAlignment="RIGHT" GridPane.rowIndex="2" />
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="221.0" text="Passengers Fit. Disadv. (Sp)" GridPane.rowIndex="4" />
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="182.0" text="Passenger Genes (Tp/G)" GridPane.rowIndex="5" />
+                                                                                          <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="241.0" text="Passenger Gene Target Size (Tp)" GridPane.rowIndex="6" />
+                                                                                       </children>
+                                                                                       <padding>
+                                                                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                                       </padding>
+                                                                                    </GridPane>
+                                                                                 </children>
+                                                                              </AnchorPane>
+                                                                        </content>
+                                                                           <tooltip>
+                                                                              <Tooltip text="Simple Muation Advantage Modell will be generated.&#10;Based on the below settings all genes in respective group&#10;will have the same gene width and advantage. &#10;Gene names will be D_* or P_* where asterisk is subsequent&#10;gene number" />
+                                                                           </tooltip>
+                                                                      </Tab>
+                                                                      <Tab text="Precise">
+                                                                        <content>
+                                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="357.0">
+                                                                                 <children>
+                                                                                    <Button fx:id="buttonLoadMAM" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonLoadMAM" prefHeight="31.0" prefWidth="126.0" text="Pick and load" />
+                                                                                    <TextField fx:id="mamDriverGenesTdg" alignment="CENTER_RIGHT" editable="false" layoutX="198.0" layoutY="134.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffb6c1; -fx-border-color: #808080;" />
+                                                                                    <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="139.0" prefHeight="17.0" prefWidth="163.0" text="Driver Genes (Td/G)" />
+                                                                                    <TextField fx:id="mamPassengerGenesTpg" alignment="CENTER_RIGHT" editable="false" layoutX="198.0" layoutY="208.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #90ee90; -fx-border-color: #808080;" />
+                                                                                    <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="214.0" prefHeight="21.0" prefWidth="163.0" text="Passenger Genes (Tp/G)" />
+                                                                                    <Label layoutX="198.0" layoutY="99.0" text="MAM Statistics:" />
+                                                                                    <Button fx:id="buttonUnloadMAM" layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleButtonUnloadMAM" prefHeight="31.0" prefWidth="125.0" text="Unload" />
+                                                                                    <TextField fx:id="mamDriverRegionWidth" alignment="CENTER_RIGHT" editable="false" layoutX="198.0" layoutY="167.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #ffb6c1; -fx-border-color: #808080;" />
+                                                                                    <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="173.0" prefHeight="17.0" prefWidth="163.0" text="Driver Region Width" />
+                                                                                    <TextField fx:id="mamPassengerRegionWidth" alignment="CENTER_RIGHT" editable="false" layoutX="198.0" layoutY="241.0" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #90ee90; -fx-border-color: #808080;" />
+                                                                                    <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="247.0" prefHeight="21.0" prefWidth="163.0" text="Passenger Region Width" />
+                                                                                    <TextField fx:id="mamPath" layoutX="151.0" layoutY="14.0" onKeyReleased="#handleOnKeyInInputField" prefHeight="31.0" prefWidth="192.0" />
+                                                                                 </children>
+                                                                              </AnchorPane>
+                                                                        </content>
+                                                                           <tooltip>
+                                                                              <Tooltip text="Allows loading precise Mutation Advantage Model from file.&#10;Simple modell will be unloaded" />
+                                                                           </tooltip>
+                                                                      </Tab>
+                                                                    </tabs>
+                                                                  </TabPane>
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </content>
+                                                      </TitledPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </children>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </AnchorPane>
+                                    </content>
+                                       <tooltip>
+                                          <Tooltip text="Settings for model parameters" />
+                                       </tooltip>
+                                  </Tab>
+                                  <Tab text="Output">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <GridPane hgap="5.0" layoutX="627.0" layoutY="88.0" prefHeight="428.0" prefWidth="683.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="389.0" minHeight="10.0" prefHeight="359.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <GridPane hgap="5.0" vgap="5.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="121.33331298828125" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="243.33331807454425" minHeight="10.0" prefHeight="161.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <TitledPane animated="false" prefHeight="147.0" prefWidth="679.0" text="Working Directory">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="378.0">
+                                                                     <children>
+                                                                        <Button fx:id="buttonChangeWorkDir" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonChangeWorkDir" text="Change" />
+                                                                        <TextField fx:id="teWorkDir" layoutX="84.0" layoutY="11.0" onKeyReleased="#handleOnKeyInInputField" prefHeight="31.0" prefWidth="280.0" text="h:\" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                               <tooltip>
+                                                                  <Tooltip text="Working directory where cell, gexf and clone files will be storred" />
+                                                               </tooltip>
+                                                            </TitledPane>
+                                                            <TitledPane animated="false" prefHeight="57.0" prefWidth="380.0" text="Charts and Histograms" GridPane.rowIndex="1">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="41.0" prefWidth="378.0">
+                                                                     <children>
+                                                                        <GridPane layoutY="-24.0" prefHeight="90.0" prefWidth="384.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <CheckBox fx:id="cbGenerateSimulationPNG" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Charts" />
+                                                                              <CheckBox fx:id="cbGenerateAnalyticsPNG" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" prefHeight="18.0" prefWidth="189.0" text="Histograms" GridPane.columnIndex="1" />
+                                                                              <CheckBox fx:id="teResUseGroupping" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleOnMouseReleased" prefHeight="21.0" prefWidth="314.0" text="Binning" GridPane.columnIndex="2">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Switch for grouping data to make histograms baed on less categories&#10;Setting on will increase the application's GUI performance&#10;but will lowering the detail level on histograms" />
+                                                                                 </tooltip>
+                                                                              </CheckBox>
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </TitledPane>
+                                                            <TitledPane fx:id="cloneFileSettings" animated="false" prefHeight="189.0" prefWidth="380.0" text="Iteration Dependend Text Analytics" GridPane.rowIndex="2">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="122.0" prefWidth="378.0">
+                                                                     <children>
+                                                                        <GridPane hgap="10.0" layoutX="32.4" layoutY="30.4" prefHeight="118.0" prefWidth="346.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="113.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="132.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="91.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                              <RowConstraints />
+                                                                              <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <CheckBox fx:id="cbPrepareClones" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Clone Files" GridPane.rowIndex="3" />
+                                                                              <CheckBox fx:id="cbPrepareCells" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Cell Files" GridPane.rowIndex="2">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Empty Tooltip" />
+                                                                                 </tooltip>
+                                                                              </CheckBox>
+                                                                              <CheckBox fx:id="cbGenerateSurvivorsAnalytics" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Survivor Files" GridPane.rowIndex="1" />
+                                                                              <Label fx:id="lateCellListerCutOff" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="120.0" text="Cell Lister Cutoff" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                                              <TextField fx:id="teCellListerCutOff" onKeyReleased="#handleOnKeyInInputField" prefHeight="31.0" prefWidth="112.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Maximum size of clone, where each cell ID will be written to file.&#10;When clone population will be bigger, the detailed cell ID's will not be exported.&#10;Recommended value: 500 (but may depend on the research needs)" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label fx:id="lateCloneMinSize" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="144.0" text="Min.Clone Size" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                              <TextField fx:id="teCloneMinSize" onKeyReleased="#handleOnKeyInInputField" prefHeight="31.0" prefWidth="113.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Clone populations with less cells will not be mentioned in the &quot;Clone File&quot;.&#10;Minimal: 2" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                              <Label fx:id="lateCloneMinLifespan" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="162.0" text="Min.Clone Lifespan" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                              <TextField fx:id="teCloneMinLifespan" onKeyReleased="#handleOnKeyInInputField" prefHeight="31.0" prefWidth="112.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Clone lifespan is the difference between the number of the cycle when last cell of the clone died&#10;and the number of the cycle where first cell of the clone has been created.&#10;The minimal lifespan parameters allow to rule-out clone populations which lived&#10;less than the given number of cycles.&#10;No recommended value (up to the research needs)" />
+                                                                                 </tooltip>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                               <tooltip>
+                                                                  <Tooltip text="Files with analysis of the clone cell groups after simulation ends" />
+                                                               </tooltip>
+                                                            </TitledPane>
+                                                         </children>
+                                                      </GridPane>
+                                                      <GridPane hgap="5.0" vgap="5.0" GridPane.columnIndex="1">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="200.66668701171875" minHeight="10.0" prefHeight="194.66668701171875" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="189.33331298828125" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Accordion fx:id="tpDisplayDebug" GridPane.rowIndex="1">
+                                                               <panes>
+                                                                  <TitledPane animated="false" prefHeight="90.0" prefWidth="380.0" text="Cross-Iteration Analytics">
+                                                                    <content>
+                                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <GridPane prefHeight="119.0" prefWidth="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                <columnConstraints>
+                                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                </columnConstraints>
+                                                                                <rowConstraints>
+                                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                </rowConstraints>
+                                                                                 <children>
+                                                                                    <GridPane onMouseReleased="#handleonMouseReleased" prefHeight="95.0" prefWidth="189.0">
+                                                                                      <columnConstraints>
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                      </columnConstraints>
+                                                                                      <rowConstraints>
+                                                                                        <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                                                                        <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                                                      </rowConstraints>
+                                                                                       <children>
+                                                                                          <CheckBox fx:id="cbClonesScatter" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Clones">
+                                                                                             <padding>
+                                                                                                <Insets left="10.0" />
+                                                                                             </padding>
+                                                                                          </CheckBox>
+                                                                                          <CheckBox fx:id="cbDriversSactter" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseDragReleased="#handleonMouseReleased" onMouseReleased="#handleonMouseReleased" text="Drivers" GridPane.rowIndex="1">
+                                                                                             <padding>
+                                                                                                <Insets left="10.0" />
+                                                                                             </padding>
+                                                                                          </CheckBox>
+                                                                                       </children>
+                                                                                    </GridPane>
+                                                                                    <GridPane GridPane.columnIndex="1">
+                                                                                      <columnConstraints>
+                                                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                      </columnConstraints>
+                                                                                      <rowConstraints>
+                                                                                          <RowConstraints maxHeight="63.66667938232422" minHeight="10.0" prefHeight="42.333353678385414" vgrow="SOMETIMES" />
+                                                                                        <RowConstraints maxHeight="63.66667938232422" minHeight="10.0" prefHeight="42.333353678385414" vgrow="SOMETIMES" />
+                                                                                      </rowConstraints>
+                                                                                       <children>
+                                                                                          <Label text="Max Quota %" />
+                                                                                          <GridPane>
+                                                                                            <columnConstraints>
+                                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                                            </columnConstraints>
+                                                                                            <rowConstraints>
+                                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                                            </rowConstraints>
+                                                                                             <children>
+                                                                                                <TextField fx:id="teQuota" onKeyReleased="#handleOnKeyInInputField" prefHeight="26.0" prefWidth="136.0" GridPane.columnIndex="1">
+                                                                                                   <GridPane.margin>
+                                                                                                      <Insets right="10.0" />
+                                                                                                   </GridPane.margin>
+                                                                                                </TextField>
+                                                                                             </children>
+                                                                                          </GridPane>
+                                                                                          <CheckBox fx:id="cbPassengersScatter" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseDragReleased="#handleonMouseReleased" onMouseReleased="#handleonMouseReleased" text="Passengers" GridPane.rowIndex="1">
+                                                                                             <padding>
+                                                                                                <Insets left="10.0" />
+                                                                                             </padding>
+                                                                                          </CheckBox>
+                                                                                       </children>
+                                                                                    </GridPane>
+                                                                                 </children>
+                                                                              </GridPane>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                    </content>
+                                                                  </TitledPane>
+                                                               </panes>
+                                                            </Accordion>
+                                                            <TitledPane animated="false" prefHeight="196.0" prefWidth="355.0" text="Population Graph Generator" GridPane.valignment="TOP">
+                                                              <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="96.0" prefWidth="380.0">
+                                                                     <children>
+                                                                        <GridPane layoutX="78.0" layoutY="-8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <CheckBox fx:id="cbTeGenerateGraph" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleonMouseReleased" text="Graph">
+                                                                                 <tooltip>
+                                                                                    <Tooltip text="Graphical Data Representation" />
+                                                                                 </tooltip>
+                                                                              </CheckBox>
+                                                                              <CheckBox fx:id="cbTeGenerateFishplot" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleOnMouseReleased" text="Fishplot" GridPane.columnIndex="1" />
+                                                                              <CheckBox fx:id="ggRectangeScale" alignment="CENTER" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleOnMouseReleased" text="Equalize Aspect Ratio" GridPane.rowIndex="1" />
+                                                                              <CheckBox fx:id="ggScaleToMaxSize" mnemonicParsing="false" onKeyReleased="#handleOnKeyInInputField" onMouseReleased="#handleOnMouseReleased" text="Max Graph Dimension" GridPane.rowIndex="2" />
+                                                                              <TextField fx:id="ggMaxSize" onKeyReleased="#handleOnKeyInInputField" promptText="ggMaxSize" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                              </content>
+                                                            </TitledPane>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                       <tooltip>
+                                          <Tooltip text="Settings related to output files" />
+                                       </tooltip>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Live! View">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutX="48.0" layoutY="250.0" prefHeight="348.0" prefWidth="997.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="225.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="379.0" minHeight="10.0" prefHeight="222.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <GridPane prefHeight="248.0" prefWidth="1098.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="570.0" minWidth="10.0" prefWidth="375.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="350.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="370.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane hgap="10.0" vgap="10.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="liDriverMutations1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="liPassengerMutations1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="liCurentCycle1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="liPopulationSize1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <TextField fx:id="liShadowSize1" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <Label fx:id="laliDriverMutations1" alignment="CENTER_RIGHT" prefWidth="180.0" text="Driver Mutations:" GridPane.rowIndex="1">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label fx:id="laliPassengerMutations1" alignment="CENTER_RIGHT" prefWidth="180.0" text="Passenger Mutations" GridPane.rowIndex="2">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label fx:id="laliCurentCycle1" alignment="CENTER_RIGHT" prefWidth="180.0" text="Curent Cycle:" GridPane.rowIndex="3">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label fx:id="laliPopulationSize1" alignment="CENTER_RIGHT" prefWidth="180.0" text="Population Size in Cycle" GridPane.rowIndex="4">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label fx:id="laliShadowSize1" alignment="CENTER_RIGHT" prefWidth="180.0" text="Shadow Population Size" GridPane.rowIndex="5">
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="111.0" text="Iteration" />
+                                                <TextField fx:id="liIteration" editable="false" GridPane.columnIndex="1" />
+                                             </children>
+                                             <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </GridPane.margin>
+                                          </GridPane>
+                                          <Gauge fx:id="gaugeAccelerator" animated="true" averageVisible="true" averagingEnabled="true" averagingPeriod="20" gradientBarEnabled="true" lcdDesign="BEIGE" majorTickMarkType="TRAPEZOID" maxMeasuredValue="10.0" maxValue="10.0" minMeasuredValue="-10.0" minValue="-10.0" needleBehavior="OPTIMIZED" needleSize="THIN" needleType="VARIOMETER" prefHeight="248.0" prefWidth="339.0" smoothing="true" startFromZero="true" subTitle="Cycle / Cycle&#10;      Ratio&#10;" threshold="0.0" title="Birthrate" GridPane.columnIndex="2" />
+                                          <Gauge fx:id="gaugeDrivPass" animated="true" averagingPeriod="20" gradientBarEnabled="true" lcdDesign="BEIGE" majorTickMarkType="TRAPEZOID" maxMeasuredValue="10.0" maxValue="10.0" minMeasuredValue="0.0" needleBehavior="OPTIMIZED" needleSize="THIN" needleType="VARIOMETER" prefHeight="248.0" prefWidth="393.0" smoothing="true" startFromZero="true" subTitle="Cycle / Cycle&#10;      Ratio&#10;" threshold="0.0" title="Driv / Pass&#10;     Ratio" GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <tooltip>
+                        <Tooltip text="Look inside the model while simulation is still running.&#10;To be able to see values here while simulation is processed,&#10;the Live! View mode has to be switched on in the Settings&#10;before the simulation is started" />
+                     </tooltip>
+                  </Tab>
+                <Tab text="Simulation">
+                  <content>
+                    <AnchorPane fx:id="apSimulation" minHeight="0.0" minWidth="0.0" prefHeight="742.0" prefWidth="1000.0">
+                           <children>
+                              <GridPane hgap="10.0" layoutX="567.0" layoutY="1.0" prefHeight="447.0" prefWidth="307.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="483.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="513.0" minWidth="10.0" prefWidth="352.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="744.0" minWidth="10.0" prefWidth="736.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <GridPane hgap="10.0" vgap="10.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                              <SplitPane dividerPositions="0.25" layoutX="302.0" layoutY="37.0" prefHeight="380.0" prefWidth="462.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.333" layoutX="-52.0" layoutY="-21.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spCumulatedDriver" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.5" layoutX="-43.0" layoutY="-16.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <items>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <StackPane fx:id="spCumulatedPassenger" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                               <children>
+                                                                  <StackPane fx:id="spDrivPassRatio" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <StackPane fx:id="spPopulationSize" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <tooltip>
+                        <Tooltip text="Time-Dependent Simulation results" />
+                     </tooltip>
+                </Tab>
+                <Tab text="Analytics">
+                  <content>
+                    <AnchorPane fx:id="apAnalytics" minHeight="0.0" minWidth="0.0" prefHeight="689.0" prefWidth="1200.0">
+                           <children>
+                              <GridPane hgap="10.0" layoutX="433.0" prefHeight="447.0" prefWidth="357.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="756.0" minWidth="10.0" prefWidth="381.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="588.0" minWidth="10.0" prefWidth="379.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="449.0" minHeight="0.0" prefHeight="207.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="417.0" minHeight="10.0" prefHeight="210.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </GridPane>
+                              <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="21.0" prefHeight="374.0" prefWidth="387.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" layoutX="-33.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="138.0">
+                                                   <children>
+                                                      <StackPane fx:id="spHistogramDriver" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane SplitPane.resizableWithParent="false">
+                                                   <children>
+                                                      <StackPane fx:id="spHistogramPassenger" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" layoutX="-31.0" layoutY="-35.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spHistogramDrivPass" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spHistogramPopulationSize" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <tooltip>
+                        <Tooltip text="Histogram view for Simulation results" />
+                     </tooltip>
+                </Tab>
+                  <Tab text="Mutation Types">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" layoutX="576.0" layoutY="254.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" layoutX="-66.0" layoutY="-21.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spMutTypeGeneDriver" layoutX="-16.0" layoutY="-69.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spMutTypeLocusDriver" layoutX="-29.0" layoutY="-64.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.5" layoutX="-38.0" layoutY="-21.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spMutTypeGenePassenger" layoutX="-27.0" layoutY="-70.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <StackPane fx:id="spMutTypeLocusPassenger" layoutY="-8.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TabPane>
+         </center>
+         <top>
+            <HBox prefHeight="34.0" prefWidth="1152.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="26.0" prefWidth="1152.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleMenuLoadDefaults" text="Load Defaults" />
+                          <MenuItem mnemonicParsing="false" onAction="#handleMenuLoadSettings" text="Load Settings" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleMenuSaveSettings" text="Save Settings" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+      <SwingNode />
+      <GridPane layoutX="752.0" layoutY="76.0">
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+    </children>
+</AnchorPane>
