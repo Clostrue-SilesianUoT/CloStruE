@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="CloStruE.jnlp">
+  <information>
+    <title>CloStruE</title>
+    <vendor>Krzysztof</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Xms2g -Xmx250g "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="CloStruE.jar" size="265718" download="eager" />
+    <jar href="lib\Medusa-7.4.jar" size="1487758" download="eager" />
+    <jar href="lib\fxgraphics2d-1.5.jar" size="20386" download="eager" />
+    <jar href="lib\jcommon-1.0.23.jar" size="330246" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1565164" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="CloStruE" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="clostrue.CloStruE"  name="CloStruE" />
+  <update check="always"/>
+</jnlp>
